@@ -1,0 +1,19 @@
+package ar.edu.unlam.cuenta;
+
+public class CuentaSueldo {
+
+	protected double saldo;
+		
+	public void depositar(double cantidad) {
+		saldo += cantidad;
+	}
+	
+	public void extraer(double cantidad) {
+		saldo -= cantidad;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+}
