@@ -1,0 +1,26 @@
+package ar.edu.unlam.cuenta;
+
+public class CuentaCorriente extends CuentaSueldo{
+
+	private double saldoAdicional;
+	private double deuda;
+	
+	public CuentaCorriente (double saldoAdicional) {
+		this.saldoAdicional = saldoAdicional;
+	}
+	
+	@Override
+	public void extraer(double cantidad) {
+		if(cantidad > saldo) {
+			saldo = saldo + saldoAdicional - cantidad;
+			deuda = (saldoAdicional - saldo)*1.05;
+		}
+		else {
+			saldo -= cantidad;
+		}
+	}
+	
+	public double getDeuda() {
+		return deuda;
+	}
+}
