@@ -1,0 +1,15 @@
+package ar.edu.unlam.cuenta;
+
+public class CajaDeAhorro extends CuentaSueldo{
+
+	private Integer numeroDeExtracciones = 0;
+	
+	@Override
+	public void extraer(double cantidad) {
+		saldo -= cantidad;
+		numeroDeExtracciones++;
+		if(numeroDeExtracciones > 5) {
+			saldo -= 6;
+		}
+	}
+}
